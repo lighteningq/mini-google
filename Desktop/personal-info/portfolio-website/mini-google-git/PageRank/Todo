@@ -1,0 +1,31 @@
+ok PRJob
+ok FirstReduceBolt
+ok map() reduce() mapAndReduce()
+ok: self loop
+ok: Optimize and StressTest: 
+ok: with 6 workers and 20 nodes.
+ok: Hash to workers.
+
+5.7  EC2. Read from BDB, compute 1000 URLs, evaluate time. EBS, S3.
+5.8	 team-member, integration.
+5.9  extra. report.
+5.10 debug freeze
+5.11 demo
+
+
+
+
+read N1 N2 in PRSpout or in Crawler
+
+Do we need to store according to executors?
+
+timing analysis.
+
+KeyRange in different workers. I don't need this for now. 
+
+merge locally.
+  
+
+double lost
+evict ranksMap.
+master sleep

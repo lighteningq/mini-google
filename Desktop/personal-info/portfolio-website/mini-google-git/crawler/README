@@ -1,0 +1,47 @@
+05/04/2020
+--------Run--------
+cd git/G06/crawler
+Master: mvn exec:java@CrawlerMaster 
+Worker1: mvn exec:java@CrawlerWorker -Dexec.args="localhost:8000 ./anyname 8001"
+Worker2: mvn exec:java@CrawlerWorker -Dexec.args="localhost:8000 ./anyname 8002"
+Worker3: mvn exec:java@CrawlerWorker -Dexec.args="localhost:8000 ./anyname 8003"
+Worker4: mvn exec:java@CrawlerWorker -Dexec.args="localhost:8000 ./anyname 8004"
+
+---------------SendJob FrontEnd:--------------
+maxSize : int (i.e. 2)
+maxFile : int (i.e. 30)
+
+
+------------To use sandbox for testing:----------------
+Uncomment line 88 in Cralwer.WorkerSever.java
+	// seedUrl = "http://crawltest.cis.upenn.edu";
+
+
+
+Note:
+HEAD request when checking size, there is redirect response and I have handled it.
+
+
+
+To get PageRank:
+call:
+db.getExtractedURL(String url);
+retrieve all:
+db.retrieveExtractedURL();
+
+
+
+-------Total Processed:-------
+CrawlerMasterUtil.getTotalProcessed();
+
+
+
+------SearchEngine:-------
+SearchEngineDB.getURLFromId(id);
+getTitle(String id)
+getChunkBody(String id)
+getMetaData(String id)
+getURLFromId(String id)
+
+TODO: 
+1. 

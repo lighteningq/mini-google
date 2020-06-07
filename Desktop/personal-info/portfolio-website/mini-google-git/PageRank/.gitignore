@@ -1,0 +1,13 @@
+.idea
+*.class
+target/**
+store/**
+Worker**/
+Worker1/**
+Worker2/**
+Worker3/**
+Worker1/*
+Worker2/*
+Worker3/*
+*.txt
+/target/

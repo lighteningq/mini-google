@@ -1,0 +1,41 @@
+Full name:  ____Bo Lyu__________
+SEAS login: _____lyubo_________
+
+Which features did you implement? 
+  Entire assignment.
+
+Did you complete any extra-credit tasks? If so, which ones?
+  No.
+
+Any special instructions for building and running your solution?
+	cd ~/HW3
+	(optional: build: mvn clean install)
+	Start MasterServer: 
+		mvn exec:java@Master 
+		(default master location: 127.0.0.1:8000)
+	Start WorkerServer1:
+		mvn exec:java@Worker -Dexec.args="127.0.0.1:8000 Worker1 8001" 
+		(default input: Worker1/inputDir)
+	Start WorkerServer2:
+		mvn exec:java@Worker -Dexec.args="127.0.0.1:8000 Worker2 8002"
+		 (default input: Worker2/inputDir)
+	Open: 
+		http://localhost:8000/status
+		Input parameters, "submit job", wait until worker job prepared, "run job".
+		(Default input: Worker1/outputDir)
+		
+	Crawler:
+		mvn exec:java@Cralwer -Dexec.args="http://crawltest.cis.upenn.edu/ ./crawltest 2 30"(2 MB, 30 files)
+
+Did you personally write _all_ the code you are submitting
+(other than code from the course web page)?
+  [ check ] Yes
+  [ ] No
+
+Did you copy any code from the Internet, or from classmates?
+  [ ] Yes
+  [check ] No
+
+Did you collaborate with anyone on this assignment?
+  [ ] Yes
+  [ check ] No

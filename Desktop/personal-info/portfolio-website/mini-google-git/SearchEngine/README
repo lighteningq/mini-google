@@ -1,0 +1,5 @@
+how to run in terminal:
+mvn exec:java@searchEngine -Dexec.args="8000 123456 http://54.165.159.11:8000"  
+browser:
+http://localhost:8000/
+http://localhost:8000/search?query=wikipidia

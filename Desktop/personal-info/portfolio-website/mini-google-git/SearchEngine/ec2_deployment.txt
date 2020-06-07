@@ -1,0 +1,20 @@
+INSTRUCTION TO DEPLOY ON EC2
+1, first follow the instructions 
+ ATTENTION: in the storage  ->choose the size of ebs volumn (default is 8GB)
+ 			security group  ->HTTP	TCP	80	0.0.0.0/0 (like localhost)
+ 							->Custom TCP	TCP	8001	0.0.0.0/0
+ 							->SSH	TCP	22	0.0.0.0/0
+ 			download key-pair
+2, in the EC2 control panel, click on the instance and see the 'connect' button, click then follow two lines instruction
+3, in terminal, when you successfully connected to ec2. 
+	1)install java environment and maven environment (https://docs.aws.amazon.com/neptune/latest/userguide/iam-auth-connect-prerq.html)
+		sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo 		sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo 		sudo yum install -y apache-maven
+		sudo yum install java-1.8.0-devel 		sudo /usr/sbin/alternatives --config java
+		sudo /usr/sbin/alternatives --config javac
+		
+		all select java 1.8 and javac 1.8 ->  use : java --version 
+												    javac --version
+
+	upload file:(http://www.science.smith.edu/dftwiki/index.php/Tutorial:_So_you_want_to_run_your_code_on_Amazon%3F)
+	rsync -azv --progress -e "ssh -i /.ssh/cis455springg06.pem" homework-3-1.0-SNAPSHOT.jar  ec2-user@33.92.227.190:. 
+4, then open link on console page : http://IPv4 Public IP:port
